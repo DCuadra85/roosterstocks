@@ -31,6 +31,7 @@ class TableBody extends Component {
                 <td>$ {this.state.data.close}</td>
                 <td>{this.state.data.open}</td>
                 <td>{this.state.data.volume}</td>
+
             </tr >
         )
     }
