@@ -18,7 +18,7 @@ class Table extends Component {
                                 <th >SYMBOL</th>
                                 <th >NAME</th>
                                 <th >LAST</th>
-                                <th >CHANGE</th>
+                                <th >OPEN</th>
                                 <th >SHARE VOLUME</th>
                             </tr>
                         </thead>
@@ -27,7 +27,7 @@ class Table extends Component {
                             <TableBody ticker="GOOG" companyName="Alphabet Inc" />
                             <TableBody ticker="MSFT" companyName="Microsoft Corporation" />
                             <TableBody ticker="TSLA" companyName="Tesla Inc" />
-                            <TableBody ticker="AMZN" companyName="Amazon.com Inc." />
+                            <TableBody ticker="AMZN" companyName="Amazon.com Inc" />
                             <TableBody ticker="MRNA" companyName="Moderna Inc" />
                         </tbody>
                     </table>

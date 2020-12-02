@@ -15,8 +15,8 @@ export const stock = {
     formatPriceData: (data) => {
         const stockData = data[data.length - 1]
                 const formattedData = {}
-                formattedData.close = stockData.close.toFixed(2)
-                formattedData.change = (stockData.close - stockData.open).toFixed(2)
+                formattedData.close = stockData.close
+                formattedData.open = stockData.open
                 formattedData.volume = stockData.volume
                 return formattedData
     }
