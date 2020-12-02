@@ -55,7 +55,7 @@ class MyInvestments extends Component {
    render() {
     return (
              
-     <div className="container mw-100 my-5">
+      <div className="container mw-100 my-5">
       <div className="row">
          <div className="col-4 mx-5 text-white align-self-center bg-secondary">
             <h1>My Investments</h1>
