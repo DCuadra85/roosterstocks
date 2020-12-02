@@ -27,10 +27,17 @@ class TableBody extends Component {
         return (
             <tr>
                 <td>{this.props.ticker}</td>
+<<<<<<< HEAD
                 <td>{this.props.companyName}</td>
                 <td>$ {this.state.data.close}</td>
                 <td>{this.state.data.open}</td>
                 <td>{this.state.data.volume}</td>
+=======
+                <td>{this.state.data.price}</td>
+                <td>{this.state.data.date}</td>
+                <td>{this.state.data.time}</td>
+
+>>>>>>> bc509604a42c19c81c2e329987632fc9e637b959
             </tr >
         )
     }
