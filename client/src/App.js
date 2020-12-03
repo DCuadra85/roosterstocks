@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/home";
 import WatchList from "./pages/watchList";
 import MyInvestments from "./pages/myInvestments";
+import LoggedIn from "./pages/registration";
+// import Registration from "./Components/auth/registration"
 // import axios from "axios"
 // import Card from "./Components/Card";
 // import List from "./Components/List";
@@ -18,7 +20,7 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={LoggedIn} />
             <Route exact path="/Home" component={Home} />
             <Route exact path="/myInvestments" component={MyInvestments} />
             <Route exact path="/WatchList" component={WatchList} />
