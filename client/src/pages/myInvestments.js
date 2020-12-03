@@ -64,19 +64,6 @@ class MyInvestments extends Component {
              </p>
          </div>
       </div>
-      
-      {/* <div className="row my-5">
-         <div className="col-md-3 offset-md-3">
- 
-         </div>
-         <Card />
-         <Card />
-         <Card />
-         <Card />
-         <Card />
-         <Card />
-         <Card />
-      </div>  */}
       <div className="row justify-content-center">
           <div className="col-4 bg-dark">
             <form className="mt-4">
