@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Registration extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             email: "",
@@ -23,23 +23,24 @@ export default class Registration extends Component {
     }
 
     handleSubmit(event) {
-        const { email, password, password_confirmation }
+        event.preventDefault();
+        // const { email, password, password_confirmation }
 
         axios
             .post(
-                "http://localhost:3001/registrations",
+                "/api/user/",
                 {
                     user: {
-                        email: email,
-                        password: password,
-                        password_confirmation: password_confirmation
+                        email: this.state.email,
+                        password: this.state.password,
+                        password_confirmation: this.state.password_confirmation
                     }
                 },
                 { withCredentials: true }
             )
             .then(response => {
-                if (response.data.status === "created") {
-                    this.props.handleSuccessfulAuth(response.data);
+                if (!response.data.errmsg ) {
+                    alert("Successfully created acc");
                 }
             })
             .catch(error => {
@@ -51,7 +52,7 @@ export default class Registration extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.hundleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         type="email"
                         name="email"

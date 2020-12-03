@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom'
 
-export default class Registration extends Component {
-    constructor(props) {
-        super(props);
+export default class Login extends Component {
+    constructor() {
+        super();
 
         this.state = {
             email: "",
             password: "",
-            password_confirmation: "",
-            registrationErrors: ""
+            redirectTo: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,35 +23,43 @@ export default class Registration extends Component {
     }
 
     handleSubmit(event) {
-        const { email, password, password_confirmation }
-
+        event.preventDefault();
+        console.log("logging in");
         axios
             .post(
-                "http://localhost:3001/registrations",
+                "/api/user/login",
                 {
                     user: {
-                        email: email,
-                        password: password,
-                        password_confirmation: password_confirmation
+                        email: this.state.email,
+                        password: this.state.password
                     }
                 },
                 { withCredentials: true }
             )
             .then(response => {
-                if (response.data.status === "created") {
-                    this.props.handleSuccessfulAuth(response.data);
+                if (response.data.status === 200) {
+                    this.props.updateUser({
+                        loggedIn: true,
+                        username: response.data.username
+                    });
+                    this.setState({
+                        redirectTo: '/Home'
+                    })
                 }
             })
             .catch(error => {
                 console.log("error", error);
             });
-        event.preventDefault();
+
     }
 
     render() {
-        return (
+        if (this.state.redirectTo){
+            return <Redirect to ={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
             <div>
-                <form onSubmit={this.hundleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         type="email"
                         name="email"
@@ -68,10 +76,12 @@ export default class Registration extends Component {
                         onChange={this.handleChange}
                         required
                     />
-                <button type="submit">Register</button>
+                <button type="submit">Log In</button>
                 </form>
             </div>
         )
     }
+}
 
 }
+

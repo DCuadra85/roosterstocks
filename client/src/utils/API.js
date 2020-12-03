@@ -17,6 +17,7 @@ const API = {
   saveStock: function(stockData) {
     return axios.post("/api/stocks", stockData);
   }
+  
 };
 
 export default API;

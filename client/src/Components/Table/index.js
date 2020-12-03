@@ -15,7 +15,6 @@ class Table extends Component {
                     <table className="table mt-5">
                         <thead>
                             <tr>
-<<<<<<< HEAD
                                 <th >SYMBOL</th>
                                 <th >NAME</th>
                                 <th >LAST</th>
@@ -30,19 +29,6 @@ class Table extends Component {
                             <TableBody ticker="TSLA" companyName="Tesla Inc" />
                             <TableBody ticker="AMZN" companyName="Amazon.com Inc" />
                             <TableBody ticker="MRNA" companyName="Moderna Inc" />
-=======
-                                <th >Symbol</th>
-                                <th >Close</th>
-                                <th >Date</th>
-                                <th >Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <TableBody ticker="AAPL" />
-                            <TableBody ticker="GOOG" />
-                            <TableBody ticker="MSFT" />
-                            <TableBody ticker="TSLA" />
->>>>>>> bc509604a42c19c81c2e329987632fc9e637b959
                         </tbody>
                     </table>
                 </div>
